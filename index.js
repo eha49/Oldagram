@@ -10,16 +10,16 @@ const htmlString =
             <div class='post-author-info'>
                 <p class='post-author-name'>${posts[0].name}</p>
                 <p class='post-author-location'>${posts[0].location}</p>
-            <div>
+            </div>
         </div>
-        <img src='${posts[0].post}' class='post-body-img'>
+        <img src='${posts[0].post}' class='post-img'>
         <div class='post-reactions'>
             <img src='./images/icon-heart.png' class='post-icons heart-icon'>
             <img src='./images/icon-comment.png' class='post-icons'>
             <img src='./images/icon-dm.png' class='post-icons'> 
         </div>
-        <p class='post-likes'></p>
-        <p class=''post-author-username><span>${posts[0].username} ${posts[0].comment}</span></p>
+        <p class='post-likes'>${posts[0].likes} likes</p>
+        <p class='post-caption'><span class='post-author-username'>${posts[0].username}</span> ${posts[0].comment}</p>
     </section>
     `
 
