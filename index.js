@@ -54,7 +54,23 @@ function render() {
     }).join('');
    
     postsSection.innerHTML = htmlString;
+    
+    addListener('heart-icon', 'click');
+    addListener('post-img', 'dblclick');
 };
+
+function addListener(className, clickType) {
+    const elementCollection = document.getElementsByClassName(className);
+    if (clickType === 'click') {
+        for (let element of elementCollection) {
+            element.onclick = handleLikes;
+        }
+    } else if (clickType === 'dblclick') {
+        for (let element of elementCollection) {
+            element.ondblclick = handleLikes;
+        }
+    }    
+}
 
 function handleLikes(e) {
     if (e.target.dataset.likes) {
@@ -76,5 +92,3 @@ function updateLikes(postId) {
 render();
 
 
-
-postsSection.addEventListener('click', handleLikes);
