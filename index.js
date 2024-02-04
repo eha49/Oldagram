@@ -74,19 +74,16 @@ function addListener(className, clickType) {
 
 function handleLikes(e) {
     if (e.target.dataset.likes) {
-        updateLikes(e.target.dataset.likes);
-    }
-};
+        const postId = e.target.dataset.likes;
 
-function updateLikes(postId) {
-    const targetPost = posts.filter(post => {
+        const targetPost = posts.filter(post => {
         return postId === post.id;
-    })[0];
+        })[0];
 
-    !targetPost.isLiked ? targetPost.likes++ : targetPost.likes--;
-    targetPost.isLiked = !targetPost.isLiked;
-    render();
-    
+        !targetPost.isLiked ? targetPost.likes++ : targetPost.likes--;
+        targetPost.isLiked = !targetPost.isLiked;
+        render();
+    }
 };
 
 render();
